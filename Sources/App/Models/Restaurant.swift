@@ -1,7 +1,6 @@
 import FluentSQLite
 import Vapor
 
-/// A single entry of a Todo list.
 final class Restaurant: SQLiteModel {
     /// The unique identifier for this
     var id: Int?
