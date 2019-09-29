@@ -4,13 +4,17 @@ import Vapor
 final class Restaurant: SQLiteModel {
     /// The unique identifier for this
     var id: Int?
+    var lat: Double?
+    var long: Double?
     var title: String
     var description: String
     var imageURL: String?
     var menuItems: [MenuItem]
-    init(id: Int? = nil, title: String, description: String, imageURL: String?, menuItems: [MenuItem]) {
+    init(id: Int? = nil, title: String, lat: Double?, long: Double?, description: String, imageURL: String?, menuItems: [MenuItem]) {
         self.id = id
         self.title = title
+        self.lat = lat
+        self.long = long
         self.description = description
         self.imageURL = imageURL
         self.menuItems = menuItems
