@@ -16,14 +16,16 @@ final class Order: Decodable, Encodable {
     var menuItems: [MenuItem]
     var total: Double
     var paid: Bool
+    var orderNumber: Int
     var ready: Bool
     var delivered: Bool
-    init(id: Int? = nil, restaurant: Restaurant, menuItems: [MenuItem], total: Double, paid: Bool, ready: Bool = false, delivered: Bool = false) {
+    init(id: Int? = nil, restaurant: Restaurant, menuItems: [MenuItem], total: Double, paid: Bool, orderNumber: Int = 1, ready: Bool = false, delivered: Bool = false) {
         self.id = id
         self.restaurant = restaurant
         self.menuItems = menuItems
         self.total = total
         self.paid = paid
+        self.orderNumber = orderNumber
         self.ready = ready
         self.delivered = delivered
     }
