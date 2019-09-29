@@ -1,7 +1,7 @@
 import FluentSQLite
 import Vapor
 
-final class Restaurant: SQLiteModel {
+final class Restaurant: Decodable, Encodable, SQLiteModel {
     /// The unique identifier for this
     var id: Int?
     var lat: Double?
