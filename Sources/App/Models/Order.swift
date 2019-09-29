@@ -9,7 +9,7 @@ import Foundation
 import FluentSQLite
 import Vapor
 
-final class Order: Decodable, Encodable {
+final class Order: Decodable, Encodable, SQLiteModel {
     /// The unique identifier for this
     var id: Int?
     var restaurant: Restaurant
@@ -31,11 +31,11 @@ final class Order: Decodable, Encodable {
     }
 }
 //
-///// Allows to be used as a dynamic migration.
-//extension Order: Migration { }
-//
-///// Allows ` to be encoded to and decoded from HTTP messages.
-//extension Order: Content { }
-//
-///// Allows to be used as a dynamic parameter in route definitions.
-//extension Order: Parameter { }
+/// Allows to be used as a dynamic migration.
+extension Order: Migration { }
+
+/// Allows ` to be encoded to and decoded from HTTP messages.
+extension Order: Content { }
+
+/// Allows to be used as a dynamic parameter in route definitions.
+extension Order: Parameter { }

@@ -6,15 +6,15 @@ public func routes(_ router: Router) throws {
     router.get { req in
         return "Queue API"
     }
-    
-//    // Basic "Hello, world!" example
-//    router.get("hello") { req in
-//        return "Hello, world!"
-//    }
 
-    // Example of configuring a controller
+    // configuring controllers
     let restaurantController = RestaurantController()
     router.get("restaurants", use: restaurantController.index)
     router.post("restaurants", use: restaurantController.create)
     router.delete("restaurants", Restaurant.parameter, use: restaurantController.delete)
+    
+    let orderController = OrderController()
+    router.get("orders", use: orderController.index)
+    router.post("orders", use: orderController.create)
+    router.delete("orders", Order.parameter, use: orderController.delete)
 }
